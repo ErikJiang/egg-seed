@@ -10,6 +10,29 @@ export default (appInfo: EggAppInfo) => {
   // add your egg config in here
   config.middleware = [];
 
+  // add logger config
+  config.logger = {
+    level: 'DEBUG',
+    consoleLevel: 'DEBUG'
+  };
+
+  // add sequelize config
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    username: 'test',
+    password: 'jiangink',
+    database: 'eggseed'
+  };
+
+  // add security config
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,

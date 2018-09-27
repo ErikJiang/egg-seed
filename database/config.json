@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "test",
+    "password": "jiangink",
+    "database": "eggseed",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "test",
+    "password": "jiangink",
+    "database": "eggseed",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "test",
+    "password": "jiangink",
+    "database": "eggseed",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
