@@ -1,6 +1,6 @@
-# hackernews-async-ts
+![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg) 
 
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+# EGG-SEED
 
 ## QuickStart
 
