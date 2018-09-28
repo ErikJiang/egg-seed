@@ -1,4 +1,5 @@
-# ![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg)   SEED 种子框架
+![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg)   
+# :seedling: Seed 种子框架
 
 ## QuickStart
 
