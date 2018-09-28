@@ -1,4 +1,4 @@
-# ![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg) EGG-SEED
+# ![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg)   SEED 种子框架
 
 ## QuickStart
 
