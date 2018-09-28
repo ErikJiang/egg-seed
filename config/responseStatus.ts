@@ -1,5 +1,5 @@
 
-enum HttpStatus {
+export enum HttpStatus {
     CONTINUE = 100,
     SWITCHING_PROTOCOLS = 101,
     PROCESSING = 102,
@@ -46,15 +46,16 @@ enum HttpStatus {
     HTTP_VERSION_NOT_SUPPORTED = 505,
 }
 
-interface IErrorMessage {
+export interface IRespMessage {
     httpStatus: HttpStatus;
     code: number;
     message: string;
 }
 
-export default class {
-    public static SUCCESS: IErrorMessage = { httpStatus: HttpStatus.OK, code: 2000001, message: '' };
-    public static REQ_PARAM_ERR: IErrorMessage = { httpStatus: HttpStatus.BAD_REQUEST, code: 4000001, message: '请求参数错误.' };
-    public static USER_AUTH_FAIL: IErrorMessage = { httpStatus: HttpStatus.UNAUTHORIZED, code: 4010001, message: '用户认证失败.' };
-    public static USER_NOT_FOUND: IErrorMessage = { httpStatus: HttpStatus.NOT_FOUND, code: 4040001, message: '该用户信息未找到.' };
-};
+export class RespStatus {
+    public static SUCCESS: IRespMessage = { httpStatus: HttpStatus.OK, code: 2000001, message: '成功.' };
+    public static REQ_PARAM_ERR: IRespMessage = { httpStatus: HttpStatus.BAD_REQUEST, code: 4000001, message: '请求参数错误.' };
+    public static USER_AUTH_FAIL: IRespMessage = { httpStatus: HttpStatus.UNAUTHORIZED, code: 4010001, message: '用户认证失败.' };
+    public static USER_NOT_FOUND: IRespMessage = { httpStatus: HttpStatus.NOT_FOUND, code: 4040001, message: '该用户信息未找到.' };
+    public static SERV_INSIDE_ERR: IRespMessage = { httpStatus: HttpStatus.INTERNAL_SERVER_ERROR, code: 5000001, message: '服务端内部错误.' };
+}

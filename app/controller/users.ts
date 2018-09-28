@@ -1,4 +1,5 @@
 import { Controller } from 'egg';
+import { RespStatus } from '../../config/responseStatus';
 
 function toInt(str) {
   if (typeof str === 'number') return str;
@@ -16,7 +17,8 @@ export default class HomeController extends Controller {
 
   async show() {
     const ctx = this.ctx;
-    ctx.body = await ctx.model.User.findById(toInt(ctx.params.id));
+    let res = await ctx.model.User.findById(toInt(ctx.params.id));
+    ctx.helper.respFormat(RespStatus.SUCCESS, res)
   }
 
   async create() {
@@ -49,7 +51,7 @@ export default class HomeController extends Controller {
       ctx.status = 404;
       return;
     }
-    
+
     await user.destroy();
     ctx.status = 200;
   }

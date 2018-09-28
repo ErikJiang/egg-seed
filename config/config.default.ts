@@ -8,7 +8,7 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1538037949809_2318';
 
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
   // add logger config
   config.logger = {
