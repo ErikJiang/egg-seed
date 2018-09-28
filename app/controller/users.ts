@@ -1,9 +1,9 @@
 import { Controller } from 'egg';
 
 function toInt(str) {
-    if (typeof str === 'number') return str;
-    if (!str) return str;
-    return parseInt(str, 10) || 0;
+  if (typeof str === 'number') return str;
+  if (!str) return str;
+  return parseInt(str, 10) || 0;
 }
 
 export default class HomeController extends Controller {
@@ -49,7 +49,7 @@ export default class HomeController extends Controller {
       ctx.status = 404;
       return;
     }
-
+    
     await user.destroy();
     ctx.status = 200;
   }
