@@ -53,9 +53,11 @@ export interface IRespMessage {
 }
 
 export class RespStatus {
-    public static SUCCESS: IRespMessage = { httpStatus: HttpStatus.OK, code: 2000001, message: '成功.' };
+    public static SUCCESS: IRespMessage = { httpStatus: HttpStatus.OK, code: 2000001, message: '请求成功.' };
+    public static SIGNUP_SUCCESS: IRespMessage = { httpStatus: HttpStatus.CREATED, code: 2010001, message: '账号注册成功.' };
     public static REQ_PARAM_ERR: IRespMessage = { httpStatus: HttpStatus.BAD_REQUEST, code: 4000001, message: '请求参数错误.' };
     public static USER_AUTH_FAIL: IRespMessage = { httpStatus: HttpStatus.UNAUTHORIZED, code: 4010001, message: '用户认证失败.' };
+    public static NAME_PASSWD_ERR: IRespMessage = { httpStatus: HttpStatus.UNAUTHORIZED, code: 4010002, message: '登录用户名或密码有误.' };
     public static USER_NOT_FOUND: IRespMessage = { httpStatus: HttpStatus.NOT_FOUND, code: 4040001, message: '该用户信息未找到.' };
     public static SERV_INSIDE_ERR: IRespMessage = { httpStatus: HttpStatus.INTERNAL_SERVER_ERROR, code: 5000001, message: '服务端内部错误.' };
 }

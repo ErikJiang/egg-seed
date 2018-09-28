@@ -18,7 +18,7 @@ export default class HomeController extends Controller {
   async show() {
     const ctx = this.ctx;
     let res = await ctx.model.User.findById(toInt(ctx.params.id));
-    ctx.helper.respFormat(RespStatus.SUCCESS, res)
+    ctx.helper.respFormat(RespStatus.SUCCESS, res);
   }
 
   async create() {

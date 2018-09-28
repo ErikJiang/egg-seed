@@ -22,5 +22,12 @@ export default {
         }
         ctx.body = { code: respStatus.code, message: respStatus.message, data };
         ctx.status = respStatus.httpStatus;
-    }
+    },
+
+    // 解析获取 Token
+    getAccessToken(this: IHelper) {
+        const ctx = this.ctx;
+        let { authorization } = ctx.request.header;
+        return authorization && authorization.replace("Bearer ", "");
+    },
 }
