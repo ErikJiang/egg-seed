@@ -1,6 +1,4 @@
-![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg) 
-
-# EGG-SEED
+# ![](https://zos.alipayobjects.com/rmsportal/VTcUYAaoKqXyHJbLAPyF.svg) EGG-SEED
 
 ## QuickStart
 
