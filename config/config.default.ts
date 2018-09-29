@@ -8,16 +8,16 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1538037949809_2318';
 
   // add your egg config in here
-  config.middleware = ['errorHandler'];
+  config.middleware = ['authHandler', 'errorHandler'];
 
-  // json web token config
-  config.jwt = {
+  // jwt auth config
+  config.authHandler = {
     enable: true,
     secret: "123456@data.secret",
     expiresIn: '12h',   // 有效期
     algorithm: 'HS512', // hmac摘要算法
-    ignore: ['/signin', '/signup'],
-  }
+    match: ['/users'],
+  };
 
   // add logger config
   config.logger = {

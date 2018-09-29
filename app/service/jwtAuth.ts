@@ -1,4 +1,5 @@
 import { Service } from 'egg';
+import * as jwt from 'jsonwebtoken';
 
 export default class NewsService extends Service {
   /**
@@ -7,8 +8,8 @@ export default class NewsService extends Service {
    */
   public createToken(data) {
     const { app } = this;
-    const { secret, algorithm, expiresIn } = app.config.jwt;
-    return app.jwt.sign(data, secret, { algorithm, expiresIn });
+    const { secret, algorithm, expiresIn } = app.config.authHandler;
+    return jwt.sign(data, secret, { algorithm, expiresIn });
   }
 
   /**
@@ -17,10 +18,10 @@ export default class NewsService extends Service {
    */
   public verifyToken(token) {
     const { app } = this;
-    const { secret } = app.config.jwt;
+    const { secret } = app.config.authHandler;
     if (token) {
       try {
-        return app.jwt.verify(token, secret);
+        return jwt.verify(token, secret);
       }
       catch (e) {
         app.logger.error(e.message);
