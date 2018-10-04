@@ -20,12 +20,12 @@ module.exports = {
           comment: 'ID序号'
         },
         name: {
-          type: Sequelize.STRING(20),
+          type: Sequelize.STRING(40),
           allowNull: false,
           comment: '管理员名称'
         },
         password: {
-          type: Sequelize.STRING(20),
+          type: Sequelize.STRING(100),
           allowNull: false,
           comment: '管理员密码'
         },

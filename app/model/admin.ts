@@ -10,11 +10,11 @@ module.exports = app => {
       autoIncrement: true
     },
     name: {
-      type: STRING(30),
+      type: STRING(40),
       unique: true
     },
     password: {
-      type: STRING(20),
+      type: STRING(100),
       allowNull: false
     },
     updatedAt: {
