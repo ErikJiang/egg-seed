@@ -10,7 +10,7 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
     const { INTEGER, STRING, ENUM, UUID, UUIDV4, BOOLEAN, literal } = Sequelize;
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('tb_user', {
       id: {
         type: INTEGER,
         primaryKey: true,
@@ -19,7 +19,6 @@ module.exports = {
       uuid: {
         type: UUID,
         defaultValue: UUIDV4,
-        allowNull: false
       },
       name: {
         type: STRING(30),
@@ -79,6 +78,6 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('tb_user');
   }
 };

@@ -60,4 +60,5 @@ export class RespStatus {
     public static NAME_PASSWD_ERR: IRespMessage = { httpStatus: HttpStatus.UNAUTHORIZED, code: 4010002, message: '登录用户名或密码有误.' };
     public static USER_NOT_FOUND: IRespMessage = { httpStatus: HttpStatus.NOT_FOUND, code: 4040001, message: '该用户信息未找到.' };
     public static SERV_INSIDE_ERR: IRespMessage = { httpStatus: HttpStatus.INTERNAL_SERVER_ERROR, code: 5000001, message: '服务端内部错误.' };
+    public static SIGNUP_NAME_REPEAT: IRespMessage = { httpStatus: HttpStatus.CONFLICT, code: 4090001, message: '该账号名称已被注册.' };
 }

@@ -8,16 +8,15 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1538037949809_2318';
 
   // add your egg config in here
-  config.middleware = ['authHandler', 'errorHandler'];
+  config.middleware = ['errorHandler'];
 
-  // jwt auth config
-  config.authHandler = {
+  // json web token config
+  config.jwt = {
     enable: true,
     secret: "123456@data.secret",
-    expiresIn: '12h',   // 有效期
+    expiresIn: 24 * 60 * 60,   // 有效期24小时
     algorithm: 'HS512', // hmac摘要算法
-    match: ['/users'],
-  };
+  }
 
   // add logger config
   config.logger = {
@@ -30,9 +29,19 @@ export default (appInfo: EggAppInfo) => {
     dialect: 'mysql',
     host: '127.0.0.1',
     port: 3306,
-    username: 'root',
-    password: '123456',
+    username: 'test',
+    password: 'jiangink',
     database: 'eggseed'
+  };
+
+  // add redis config
+  config.redis = {
+    client: {
+      port: 6379,          // Redis port
+      host: '127.0.0.1',   // Redis host
+      password: null,
+      db: 0,
+    }
   };
 
   // add security config

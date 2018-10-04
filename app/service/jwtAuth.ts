@@ -8,7 +8,7 @@ export default class NewsService extends Service {
    */
   public createToken(data) {
     const { app } = this;
-    const { secret, algorithm, expiresIn } = app.config.authHandler;
+    const { secret, algorithm, expiresIn } = app.config.jwt;
     return jwt.sign(data, secret, { algorithm, expiresIn });
   }
 
@@ -18,7 +18,7 @@ export default class NewsService extends Service {
    */
   public verifyToken(token) {
     const { app } = this;
-    const { secret } = app.config.authHandler;
+    const { secret } = app.config.jwt;
     if (token) {
       try {
         return jwt.verify(token, secret);

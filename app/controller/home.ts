@@ -1,9 +1,16 @@
 import { Controller } from 'egg';
 
 export default class HomeController extends Controller {
-  public async index() {
+  public index() {
     const { ctx } = this;
-    
-    ctx.body = await ctx.service.test.sayHi('egg');
+    ctx.body = 'THIS IS SEED SERVER!';
   }
+
+  public test() {
+    const { ctx, logger } = this;
+    logger.debug(`this is test page!`);
+    logger.debug(`ctx.state.userInfo: ${JSON.stringify(ctx.state.adminInfo)}`);
+    ctx.body = 'this is test page';
+  }
+
 }

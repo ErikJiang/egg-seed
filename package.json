@@ -7,8 +7,8 @@
     "typescript": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-seed",
-    "stop": "egg-scripts stop --title=egg-server-seed",
+    "start": "egg-scripts start --daemon --title=egg-server-gm",
+    "stop": "egg-scripts stop --title=egg-server-gm",
     "dev": "egg-bin dev -r egg-ts-helper/register",
     "debug": "egg-bin debug -r egg-ts-helper/register",
     "test-local": "egg-bin test -r egg-ts-helper/register",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "egg": "^2.6.1",
+    "egg-redis": "^2.0.0",
     "egg-scripts": "^2.6.0",
     "egg-sequelize": "^4.1.0",
     "jsonwebtoken": "^8.3.0",

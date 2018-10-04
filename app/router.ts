@@ -2,10 +2,16 @@ import { Application } from 'egg';
 
 export default (app: Application) => {
   const { controller, router } = app;
-  // const auth = app.middleware.authHandler;
+  const authMiddleware = app.middleware.authHandler;
+
   router.get('/', controller.home.index);
-  // router.resources('users', '/users', controller.users);
-  router.get('/users', controller.users.index)
-  router.post('/signin', controller.auth.signin);
-  router.post('/signup', controller.auth.signup);
+  
+  router.get('/test', authMiddleware(), controller.home.test);
+  // 登录
+  router.post('/auth/signin', controller.auth.signin);
+  // 注册
+  router.post('/auth/signup', controller.auth.signup);
+  // 登出
+  router.post('/auth/signout', authMiddleware(), controller.auth.signout);
+
 };
