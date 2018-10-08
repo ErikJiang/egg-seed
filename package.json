@@ -7,10 +7,10 @@
     "typescript": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-gm",
+    "start": "egg-scripts start --sticky --daemon --title=egg-server-gm",
     "stop": "egg-scripts stop --title=egg-server-gm",
-    "dev": "egg-bin dev -r egg-ts-helper/register",
-    "debug": "egg-bin debug -r egg-ts-helper/register",
+    "dev": "egg-bin dev -r --sticky egg-ts-helper/register",
+    "debug": "egg-bin debug -r --sticky egg-ts-helper/register",
     "test-local": "egg-bin test -r egg-ts-helper/register",
     "test": "npm run lint -- --fix && npm run test-local",
     "cov": "egg-bin cov -r egg-ts-helper/register",
@@ -25,6 +25,7 @@
     "egg-redis": "^2.0.0",
     "egg-scripts": "^2.6.0",
     "egg-sequelize": "^4.1.0",
+    "egg-socket.io": "^4.1.4",
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.11",
     "mysql2": "^1.6.1"

@@ -34,6 +34,20 @@ export default (appInfo: EggAppInfo) => {
     database: 'eggseed'
   };
 
+  config.io = {
+    init: {},
+    namespace: {
+      '/': {
+        connectionMiddleware: [],
+        packetMiddleware: [],
+      },
+      '/data': {
+        connectionMiddleware: [],
+        packetMiddleware: [],
+      },
+    },
+  };
+
   // add redis config
   config.redis = {
     client: {

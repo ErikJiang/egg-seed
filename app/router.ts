@@ -1,7 +1,7 @@
 import { Application } from 'egg';
 
 export default (app: Application) => {
-  const { controller, router } = app;
+  const { controller, router, io } = app;
   const authMiddleware = app.middleware.authHandler;
 
   router.get('/', controller.home.index);
@@ -14,4 +14,5 @@ export default (app: Application) => {
   // 登出
   router.post('/auth/signout', authMiddleware(), controller.auth.signout);
 
+  io.route('chat', app.io.controller.data.ping)
 };
